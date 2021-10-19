@@ -5,7 +5,7 @@ const Detail = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch('./FakeData.json')
+        fetch('/FakeData.json')
             .then(res => res.json())
             .then(data => setData(data))
         console.log(data);
