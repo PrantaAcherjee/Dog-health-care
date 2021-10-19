@@ -13,8 +13,7 @@ const Detail = () => {
     const iteam = data.filter(td => td.id === id);
     return (
         <div>
-            <h1>More about service Details</h1>
-            <h3>Name : {iteam.name}</h3>
+            <h1>More about service Details :{id}</h1>
             <h3>price : {iteam.price}</h3>
             <h3>description :{iteam.des}</h3>
             <button className="bg-warning">Order Now</button>
