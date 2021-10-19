@@ -10,6 +10,8 @@ import Faq from './Components/FAQ/Faq';
 import Register from './Components/Register/Register';
 import Error from './Components/Error/Error';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Detail from './Components/Detail/Detail';
 
 function App() {
   return (
@@ -39,6 +41,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
+            <PrivateRoute path="/detail/:id">
+              <Detail></Detail>
+            </PrivateRoute>
             <Route path="*">
               <Error></Error>
             </Route>
