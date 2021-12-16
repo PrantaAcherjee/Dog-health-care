@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('./FakeData.json')
+        fetch('/FakeData.json')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])

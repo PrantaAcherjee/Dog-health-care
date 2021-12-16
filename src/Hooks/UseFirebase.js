@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+        
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const signInUsingGoogle = () => {
@@ -52,7 +52,6 @@ const useFirebase = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                // console.log('inside state changed', user)
                 setuser(user)
             }
         })
