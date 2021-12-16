@@ -8,10 +8,11 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-        
+    const [isLoading,setIsLoading]=useState(true);   
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     const signInUsingGoogle = () => {
+        setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 console.log(result.user)
@@ -20,6 +21,7 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(()=>setIsLoading(false))
     }
     const handleEmailChange = e => {
         setEmail(e.target.value);
@@ -32,20 +34,25 @@ const useFirebase = () => {
     }
 
     const registerWithEmailPassword = e => {
+        setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
             })
+            .finally(()=>setIsLoading(false))
         e.preventDefault();
     }
 
-    const logInWithEmailPassword = () => {
+    const logInWithEmailPassword = e => {
+        setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user
                 console.log(user)
             })
+            .finally(()=>setIsLoading(false))
+            e.preventDefault();
     }
 
 
@@ -54,14 +61,17 @@ const useFirebase = () => {
             if (user) {
                 setuser(user)
             }
+            setIsLoading(false);
         })
     }, [])
 
     const logOut = () => {
+        setIsLoading(true);
         signOut(auth)
             .then(() => {
                 setuser({})
             })
+            .finally(()=>setIsLoading(false))
     }
 
     return {
@@ -73,6 +83,7 @@ const useFirebase = () => {
         handlePasswordChange,
         registerWithEmailPassword,
         logInWithEmailPassword,
+        isLoading,
     }
 }
 

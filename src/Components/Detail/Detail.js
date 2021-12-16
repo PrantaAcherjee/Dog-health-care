@@ -9,7 +9,7 @@ const Detail = () => {
             .then(res => res.json())
             .then(data => {
                 
-                const findServiceData = data.find(service => service.id == id)
+                const findServiceData = data.find(service => service.id === id)
                 if (findServiceData) {
                     setService(findServiceData);
                 }

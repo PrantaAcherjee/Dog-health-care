@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
 
 const Register = () => {
-    const { registerWithEmailPassword, handleEmailChange, handlePasswordChange } = useAuth();
+    const { registerWithEmailPassword, handleEmailChange, handlePasswordChange,signInUsingGoogle } = useAuth();
     return (
         <div className="row">
             <div className="col-md-8">
@@ -19,7 +19,7 @@ const Register = () => {
                         <button className="bg-success rounded-pill text-white px-2" type="submit">Register</button>
                     </form>
                     <br />
-                    <button className="bg-warning rounded-pill ">Google Register</button>
+                    <button className="bg-warning rounded-pill" onClick={signInUsingGoogle}>Google Register</button>
                     <br />
                     <br />
                     <p className="fw-bold text-danger">Alredy Registered?</p>
