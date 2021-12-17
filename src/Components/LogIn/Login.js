@@ -1,8 +1,21 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
 const Login = () => {
-    const { signInUsingGoogle, logInWithEmailPassword,handleEmailChange,handlePasswordChange } = useAuth();
+    const {signInUsingGoogle, logInWithEmailPassword,handleEmailChange,handlePasswordChange } = useAuth();
+    const location= useLocation();
+    const history =useHistory();
+    const destination= location.state?.from || '/'
+
+    const handleGoogleLogIn=()=>{
+        signInUsingGoogle()
+        .then(result => {
+            console.log(result.user) 
+            history.push(destination);
+            })
+    }
     return (
         <div className="row">
             <div className="col-md-4">
@@ -13,7 +26,7 @@ const Login = () => {
             <div className="col-md-8">
                 <br /><br /><br />
                 <h2 className="text-primary">Please Log In</h2>
-         <form onSubmit={logInWithEmailPassword}>
+         <form onSubmit={ logInWithEmailPassword}>
                     <input className="my-2" type="email" placeholder="Enter your Email" required
                     onChange={handleEmailChange}
                      />
@@ -26,7 +39,7 @@ const Login = () => {
                     type="submit">Log in</button>
         </form>
                 <br />
-                <button onClick={signInUsingGoogle} className="bg-warning rounded-pill">Google Log in</button>
+                <button onClick={handleGoogleLogIn} className="bg-warning rounded-pill">Google Log in</button>
                 <br />
                 <br />
                 <p className="fw-bold text-danger">Are You New User?</p>
