@@ -7,19 +7,17 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <div>
-            <div className="row d-flex justify-content-between align-items-center mx-auto BGC py-3">
+            <div className="row col-sm-12 d-flex justify-content-between align-items-center mx-auto BGC py-3">
 
-                <div className="col-md-6">
-                    <div className="fs-4 "><i class="fas fa-stethoscope"> Ensure the best Care</i>
+               <div className="col-md-6">
+                    <div className="fs-3 "><i class="fas fa-stethoscope"> Ensure the best Care</i>
                     </div>
                 </div>
                 <div className="header fs-4 col-md-6">
                     <NavLink to="/home">Home</NavLink>
                     <NavLink to="/services">Services</NavLink>
-                    <NavLink to="/about">About us</NavLink>
+                    <NavLink to="/about">About Us</NavLink>
                     <NavLink to="faq">FAQ</NavLink>
-                                     
-                    
                     {
                         user?.email?
                        <NavLink to="" onClick={logOut}>Log Out</NavLink>
