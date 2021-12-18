@@ -11,6 +11,7 @@ const useFirebase = () => {
     const [isLoading,setIsLoading]=useState(true);   
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+   // login with google ID
 
     const signInUsingGoogle = () => {
         setIsLoading(true);
@@ -21,37 +22,33 @@ const useFirebase = () => {
             })
             .finally(()=>setIsLoading(false))
     }
+    // email state
     const handleEmailChange = e => {
         setEmail(e.target.value);
-      //  console.log(e.target.value)
+       console.log(e.target.value)
     }
+    //  password state
     const handlePasswordChange = e => {
         setPassword(e.target.value);
      //   console.log(e.target.value)
 
     }
-
-    const registerWithEmailPassword = e => {
+    // register with email and password 
+    const registerWithEmailPassword = () => {
         setIsLoading(true);
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user;
-             //   console.log(user)
-            })
+       return createUserWithEmailAndPassword(auth, email, password)
+            
             .finally(()=>setIsLoading(false))
-        e.preventDefault();
+         
     }
-
-    const logInWithEmailPassword = e => {
+   // login with email and password
+    const logInWithEmailPassword = () => {
+        
         setIsLoading(true)
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user
-                 
-             //   console.log(user)
-            })
-            .finally(()=>setIsLoading(false))
-            e.preventDefault();
+       return signInWithEmailAndPassword(auth, email, password)
+            
+            .finally(()=>setIsLoading(false))  
+           
     }
 
 

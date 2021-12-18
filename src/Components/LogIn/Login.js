@@ -16,6 +16,17 @@ const Login = () => {
             history.push(destination);
             })
     }
+
+    const handleEmailPasswordSignIn=(e)=>{
+        logInWithEmailPassword()
+        .then(result => {
+            const user = result.user
+            console.log(user)
+            history.push(destination);
+            
+        })
+        e.preventDefault();
+    }
     return (
         <div className="row">
             <div className="col-md-4">
@@ -26,7 +37,7 @@ const Login = () => {
             <div className="col-md-8">
                 <br /><br /><br />
                 <h2 className="text-primary">Please Log In</h2>
-         <form onSubmit={ logInWithEmailPassword}>
+         <form onSubmit={handleEmailPasswordSignIn}>
                     <input className="my-2" type="email" placeholder="Enter your Email" required
                     onChange={handleEmailChange}
                      />

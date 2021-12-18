@@ -1,16 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/UseAuth';
+import { useHistory } from 'react-router-dom';
+ 
 
 const Register = () => {
-    const { registerWithEmailPassword, handleEmailChange, handlePasswordChange} = useAuth();
+    const { registerWithEmailPassword,handleEmailChange, handlePasswordChange} = useAuth();
+    const history=useHistory();
+    
+
+    const handleRgisterWithEmailPassword =(e)=>{
+        registerWithEmailPassword()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            history.replace('/');
+        })
+      e.preventDefault();
+    }
     return (
         <div className="row">
             <div className="col-md-8">
                 <br /><br /><br />
                 <div>
                     <h2 className="text-primary">Please Register</h2>
-                    <form onSubmit={registerWithEmailPassword}>
+                    <form onSubmit={handleRgisterWithEmailPassword}>
                         <input className="my-2" onChange={handleEmailChange} type="email" placeholder="Enter your Email" required />
                         <br />
                         <input onChange={handlePasswordChange} type="password" name="password" placeholder="Enter your password" required />
