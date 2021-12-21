@@ -1,30 +1,88 @@
 import React from 'react';
+import { Card, Carousel } from 'react-bootstrap';
 import Footer from '../Footer/Footer';
 import './AboutUs.css'
-
+import animalOne from "../../images/animal one.jpg"
+import animalTwo from "../../images/animal two.jpg"
+import animalThree from "../../images/animal three.jpg"
+import cardImg from "../../images/card.jpg"
 const AboutUs = () => {
     return (
-        <div className="about-us">
-            <div>
-                {/* about us section added  */}
-                <h1 style={{ color: "cyan" }}>Welcome to "Animals Care"</h1>
-                <p style={{ color: "black" }, { fontWeight: 'bold' }, { backgroundColor: "White" }}>Headquartered in Hershey, Pennsylvania, USA, IGI Global is a leading international academic publisher committed to facilitating the discovery of pioneering research that enhances and expands the body of knowledge available to the research community.Working in close collaboration with expert researchers and professionals from leading institutions, including Massachusetts Institute of Technology (MIT), Harvard University, Stanford University, University of Cambridge, University of Oxford, Tsinghua University, and Australian National University, IGI Global disseminates quality content across 350+ topics in 11 core subject areas.All of these publications have been contributed by over 100,000+ industry-leading researchers and experts worldwide, ensuring that each title contains the most emerging and timeliest research.To ensure that institutions are able to affordably access this valuable research content, all of these titles are available through the IGI Global e-Book Collection and e-Journal Collection.Additionally, IGI Global offers a full collection of Open Access (OA) offerings, including a portfolio of full Gold OA journals, OA reference book publishing, as well as Author Services, to ensure that research can be easily accessible to the entire academic community.Learn more about our OA opportunities here.Also, view our subject coverage below
-                </p>
-                <h3 style={{ color: "yellow" }}>Our Specialist: </h3>
-            </div>
-            <div className="about-img">
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573122618.png" alt="" />
-                <img className="img-2" src=" https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625574077316.png" alt="" />
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573160811.png" alt="" />
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573176714.png" alt="" />
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573189607.png" alt="" />
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573334879.png" alt="" />
-                <img src=" https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625574531839.png" alt="" />
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573485356.png" alt="" />
-                <img src="https://res.cloudinary.com/programming-hero-image/image/upload/public/files/1625573392044.png" alt="" />
-            </div>
+        <div className='bg-black'>
+            {/* slider  */}
+            <h2 className='text-white pt-3'>OUR GOAL IS TO SERVER YOUR PET</h2> 
+            <div className='row pt-3'>
+            <div className="col-md-1"></div>
+            <div className='col-md-10'>
+            <Carousel>
+     <Carousel.Item>
+     <img
+      className="d-block w-100"
+      src= {animalOne}
+      alt="First slide"
+    />
+     <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+        <img
+      className="d-block w-100"
+      src={animalTwo}
+      alt="Second slide"
+    />
+
+     <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+     <img
+      className="d-block w-100"
+      src={animalThree}
+      alt="Third slide"
+    />
+
+        <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+    </Carousel>
+    </div>
+    <div className="col-md-1"></div>
+    </div>
+
+        <div className="row mt-5">
+        <div className='col-md-6 px-4'>
+        <h2 style={{textAlign:'left',color:'green'}}>OUR STORY</h2> 
+        <h6 style={{textAlign:'left',color:'green'}}>WE CARE YOUR PET</h6>
+        <br />
+            <p style={{textAlign:'left',color:'white'}}>OUR STORY           
+            We have been grooming for many years now and we love every part of our job! We provide a very warm and friendly environment for your pets. Our professional team made sure your pet always gets the highest level of care, because we treat all pets as if they were our own! <br />
+            <br />
+            <button className='bg-success text-white'>READ MORE</button>
+            </p>
+           
+        </div>
+        <div className="col-md-2"></div>
+        <div className="col-md-4 py-3">
+        <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={cardImg} />
+        <Card.Body>
+         <Card.Title className='text-info'>Ensure The Best</Card.Title>
+        <Card.Text className='text-secondary'>
+        Some quick example text to build on the card title and make up the bulk of
+        the card's content.
+        </Card.Text>
+        </Card.Body>
+        </Card>
+        </div>       
             <Footer></Footer>
         </div >
+        </div>
     );
 };
 

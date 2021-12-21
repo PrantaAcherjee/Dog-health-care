@@ -11,8 +11,9 @@ const Services = () => {
             .then(data => setServices(data));
     }, [])
     return (
-        <div>
+        <div className='pb-3'>
             <h2>Our Services & Procedures</h2>
+            <h4>We love every Pet</h4>
             <Row xs={1} md={2} className="g-4">
                 {
                     services.map(service => <Col key={service.id}>
@@ -23,12 +24,12 @@ const Services = () => {
                                 <Card.Text>
                                     {service.des}
                                 </Card.Text>
-                            </Card.Body>
-                            <Link to={`/detail/${service.id}`}>
+                                <h5 className="fw-400">Price: ${service.price}</h5>
+                                <Link to={`/detail/${service.id}`}>
 
-                                <button className="w-25 mx-auto bg-warning text-white btn">Get More Info</button>
+                                <button className="w-25 mx-auto bg-warning text-white btn">Explore More</button>
                             </Link>
-                            <p className="fw-400">Price: ${service.price}</p>
+                            </Card.Body>
                         </Card>
                     </Col>)
                 }

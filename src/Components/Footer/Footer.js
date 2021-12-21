@@ -21,9 +21,9 @@ const Footer = () => {
             <div className="footer-container">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-5">
                             <div className="left-container text-start">
-                                <h1>Animals Care</h1>
+                                <h1>ANIMAL CARE</h1>
                                 <div className="icons-container d-flex text-center ">
                                     <div className="icon">
                                         <FontAwesomeIcon icon={faInstagramSquare} />
@@ -47,11 +47,21 @@ const Footer = () => {
                                 </p>
 
                                 <p className="mt-5">
-                                    "Animals Care"<small>© . All rights reserved.</small>
+                                 COPYRIGHT <span style={{color:'green'}}>ANIMAL CARE</span> <small> © All RIGHT RESERVED.</small>
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        
+                        <div className="col-md-3 pb-2">
+                        <h4>OUICK MENU</h4>
+                        <div className="m-4">
+                        <h6 className="my-3">LOGIN</h6>
+                        <h6 className="my-3"> HOME</h6>
+                        <h6 className="my-3"> SERVICE</h6>
+                        <h6 className="my-3"> REGISTER</h6>
+                        </div>
+                        </div>
+                        <div className="col-md-4">
                             <div className="right-footer-container">
                                 <h3>Get your Service.</h3>
                                 <input

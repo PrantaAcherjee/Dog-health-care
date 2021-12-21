@@ -10,10 +10,10 @@ const Faq = () => {
 
             <div>
                 <div className="row">
-                    <div className="col-md-4 bg-dark">
-                        <img className="img-fluid" src="https://images.unsplash.com/photo-1595452767427-0905ad9b036d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fGZyZXF1ZW50bHklMjBhc2tlZCUyMHF1ZXN0aW9ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
+                    <div className="col-md-4 ">
+                        {/* <img className="img-fluid"src={} alt="" /> */}
                     </div>
-                    <div className="col-md-8 bg-dark">
+                    <div className="col-md-8  ">
                         <Accordion defaultActiveKey="0">
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>Question:1

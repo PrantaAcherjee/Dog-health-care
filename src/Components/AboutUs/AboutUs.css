@@ -1,11 +1,1 @@
-.about-us{
-    background-color: darkslateblue;
-   height: 100%;
-   width: 100%;
    
-}
-.about-img{
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
-   
-}

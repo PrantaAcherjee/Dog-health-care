@@ -1,8 +1,8 @@
 .footer-container {
-    background-color:black;
+    background-color:#161212;
     padding: 50px;
     color: rgb(216, 209, 209);
-    margin-top: 10px;
+     
      
   }
 
@@ -10,7 +10,7 @@
     margin: 5px;
     padding: 5px;
     background-color: rgb(46, 46, 46);
-    color: rgb(155, 155, 155);
+    color: white;
     font-size: 30px;
   }
   .icon:hover {
