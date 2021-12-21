@@ -1,6 +1,7 @@
 import React from 'react';
 import { Accordion } from 'react-bootstrap';
 import "./Faq.css"
+import question from "../../images/question.jpg"
 
 const Faq = () => {
     return (
@@ -11,7 +12,7 @@ const Faq = () => {
             <div>
                 <div className="row">
                     <div className="col-md-4 ">
-                        {/* <img className="img-fluid"src={} alt="" /> */}
+                        <img className="img-fluid"src={question} alt="" />
                     </div>
                     <div className="col-md-8  ">
                         <Accordion defaultActiveKey="0">
